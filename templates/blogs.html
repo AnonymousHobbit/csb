@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Blogs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/backup">Backups</a>
+    <a href="/blogs">Blogs</a>
+  </nav>
+  <section id="page">
+      {% if blogs is defined %}
+        <div class="blog-links">
+          <h1 style="padding: 1rem; color:rgb(43, 43, 43);font-size:35px;">Our current Blogs</h2>
+          {% for i in blogs %}
+            <div style="padding: 1rem;">
+              <a href="/blog/{{ i['id'] }}">{{i["title"] }} - {{i["author"]}}</a><br>
+            </div>
+          {% endfor %}
+
+        </div>
+      {% endif %}
+  </section>
+</body>

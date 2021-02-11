@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>Backup Service</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/backup">Backups</a>
+    <a href="/blogs">Blogs</a>
+  </nav>
+  <section id="page">
+    <h2>Super Secure Backup Service</h2>
+    {% if error_data is not defined %}
+    <div style="margin: 1rem;">
+      <p>Press button to test how it works</p>
+      <form action="/backup" method="post">
+        <input type="text" name="search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    {% else %}
+      <p style="margin: 1rem;">{{ error_data }}</p>
+    {% endif%}
+  </section>
+</body>

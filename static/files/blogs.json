@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "id": 0,
+      "author": "Steve",
+      "title": "Welcome to my new site",
+      "content": "Welcome welcome! \nThis site is my current school project. I will try to make it as secure as possible because it is part of cybersecuritybase course. "
+    },
+    {
+      "id": 1,
+      "author": "Chris",
+      "title": "Introduction",
+      "content": "I am the second developer of this site. I make sure the frontend is smooth as possible."
+    },
+    {
+      "id": 2,
+      "author": "Chris",
+      "title": "New update!",
+      "content": "I created a new API for this website to use in our discord bot. Ask Steve for credentials. "
+    }
+  ]
+}

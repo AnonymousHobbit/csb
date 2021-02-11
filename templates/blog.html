@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  {% if blog is defined %}
+    <title>Blog - {{ blog["id"] }}</title>
+  {% endif %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/backup">Backups</a>
+    <a href="/blogs">Blogs</a>
+  </nav>
+  <section id="page">
+    {% if blog is defined %}
+      <div class="blog">
+        <h1>{{ blog["title"] }}</h1>
+        <p>{{ blog["content"] }}</p>
+        <h3> - {{ blog["author"] }}
+      </div>
+    {% endif %}
+  </section>
+</body>

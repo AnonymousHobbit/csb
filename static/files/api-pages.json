@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {"id": 0,
+     "page": "/api/admin/development",
+     "status": "Not finished"
+     },
+    {"id": 1,
+     "page": "/api/admin/users",
+     "status": "Ready"
+     },
+    {"id": 2,
+     "page": "/api/admin/panel",
+     "status": "Not finished"
+     }
+  ]
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  {% if error is defined %}
+    <title>{{ error }}</title>
+  {% endif %}
+   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/backup">Backups</a>
+    <a href="/blogs">Blogs</a>
+  </nav>
+  <section id="page">
+    {% if error is defined %}
+      <h2 style="padding: 1rem; font-size:25px">{{ error }}</h2>
+    {% endif %}
+  </section>
+</body>

@@ -1,0 +1,19 @@
+{
+  "users":[
+    {"id": 0,
+     "username": "root",
+     "password": "#G3T_PwN3D!",
+     "home_location": "/root/",
+     "permissions_level": "*"},
+    {"id": 1,
+     "username": "Admin",
+     "password": "Admin",
+     "home_location": "/home/admin",
+     "permissions_level": 2},
+    {"id": 2,
+     "username": "Hobbit",
+     "password": "CSB{BR0K3N_AU7TH3NT1C4T10N}",
+     "home_location": "/home/hobbit",
+     "permissions": 1}
+   ]
+}

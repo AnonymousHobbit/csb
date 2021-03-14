@@ -77,6 +77,7 @@ def backup():
     if request.method == "POST":
         info = request.form["search"]
         try:
+
             data = base64.b64decode(info)
             deserialized = pickle.loads(data)
             return render_template("backup.html", error_data=deserialized.decode().strip())
@@ -84,8 +85,8 @@ def backup():
             msg = f"No backup files found for {info}"
             return render_template("backup.html", error_data=msg)
 
-#1. Server Sided Template Injection
 #7. Cross-Site Scripting
+#1. Server Sided Template Injection
 @app.errorhandler(404)
 def not_found(e):
     data = {'flag':"CSB{SST1_INJ3C7I0N}"}
@@ -105,6 +106,7 @@ def not_found(e):
          <h2>Page {path} not found</h2>
       </section>
     </body>'''
+    #return render_template("error.html", error=f"Page {path} not found")
     return render_template_string(template, data=data), 404
 
 @app.route('/')
